@@ -7,7 +7,7 @@ from keypad import RaspiBoard
 import time
 
 LOG_LEVEL_PJSIP = 3
-SIP_SERVER="192.168.1.10"
+SIP_SERVER="192.168.0.150"
 SIP_USER="raspi"
 SIP_PASS="1111"
 SIP_REALM="asterisk"
@@ -122,7 +122,8 @@ class DoorStation:
             print "call in progress -> SKIP"
             return
 
-        self._call = self.acc.make_call("sip:100@"+SIP_SERVER, DBCallCallback())
+#        self._call = self.acc.make_call("sip:100@"+SIP_SERVER, DBCallCallback())
+        self._call = self.acc.make_call("sip:150@"+SIP_SERVER, DBCallCallback())
     
     def stop(self):
         try:

@@ -6,7 +6,7 @@ import lockfile
 import daemon
 from station import DoorBerry
 
-ctx = daemon.DaemonContext()
+ctx = daemon.DaemonContext(stdout=sys.stdout)
 
 #pid = str(os.getpid())
 #print "PID ", pid
